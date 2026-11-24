@@ -1,59 +1,26 @@
-#EmailValidator
-[![Build Status](https://travis-ci.org/egulias/EmailValidator.png?branch=master)](https://travis-ci.org/egulias/EmailValidator) [![Coverage Status](https://coveralls.io/repos/egulias/EmailValidator/badge.png?branch=master)](https://coveralls.io/r/egulias/EmailValidator?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/egulias/EmailValidator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/egulias/EmailValidator/?branch=master) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6/small.png)](https://insight.sensiolabs.com/projects/22ba6692-9c02-42e5-a65d-1c5696bfffc6)
-=============================
-With the help of
+# egulias/email-validator 1.2.15 running clean on PHP 7.4, for EC-CUBE 3.0.x
 
-![Powered by PhpStorm](https://www.jetbrains.com/phpstorm/documentation/docs/logo_phpstorm.png)
-##Installation##
+EC-CUBE 3.0.18 requires `egulias/email-validator` `^1.2`. 1.2.15 raises a notice on PHP 7.4. This fork keeps 1.2.15 and fixes it.
 
-Run the command below to install via Composer
+## Fixed
 
-```shell
-composer require egulias/email-validator "~1.2"
+| Where | What |
+|---|---|
+| `Parser/Parser.php` | "Trying to access array offset on value of type null" when there is no previous token |
+
+## Install
+
+Requires Composer 2. In the shop's project root:
+
+```
+composer require nobuhiko/email-validator:^1.2.15
 ```
 
-##Usage##
+The package `replace`s `egulias/email-validator` 1.2.15, so Composer removes the original and every other package keeps working against the same version.
 
-Simple example:
+## What this is, and is not
 
-```php
-<?php
-
-use Egulias\EmailValidator\EmailValidator;
-
-$validator = new EmailValidator;
-if ($validator->isValid($email)) {
-	echo $email . ' is a valid email address';
-}
-```
-
-More advanced example (returns detailed diagnostic error codes):
-
-```php
-<?php
-
-use Egulias\EmailValidator\EmailValidator;
-
-$validator = new EmailValidator;
-$email = 'dominic@sayers.cc';
-$result = $validator->isValid($email);
-
-if ($result) {
-	echo $email . ' is a valid email address';
-} else if ($validator->hasWarnings()) {
-	echo 'Warning! ' . $email . ' has unusual/deprecated features (result code ' . var_export($validator->getWarnings(), true) . ')';
-} else {
-	echo $email . ' is not a valid email address (result code ' . $validator->getError() . ')';
-}
-```
-
-##Contributors##
-As this is a port from another library and work, here are other people related to the previous:
-
-* Ricard Clau [@ricardclau](http://github.com/ricardclau):      	Performance against PHP built-in filter_var
-* Josepf Bielawski [@stloyd](http://github.com/stloyd):      		For its first re-work of Dominic's lib
-* Dominic Sayers [@dominicsayers](http://github.com/dominicsayers):  	The original isemail function
-
-##License##
-Released under the MIT License attached with this code.
-
+- The base is exactly the version EC-CUBE 3.0.18 ships. Nothing is upgraded; each fix is its own commit on the `eccube3/1.2` branch.
+- Checked by running an EC-CUBE 3.0.18 shop (front pages, guest checkout to completion, contact form, admin screens) on PHP 7.1 and PHP 7.4 and comparing what PHP reports: with these changes PHP 7.4 reports nothing that PHP 7.1 does not.
+- This is not an official release of the upstream project and is not supported by its maintainers. Upstream: https://github.com/egulias/EmailValidator
+- EC-CUBE 3 が使っているバージョンのまま、PHP 7.4 で出る注意と警告だけを直したものです。保守: うみうしラボ

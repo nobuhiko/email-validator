@@ -1,31 +1,34 @@
 {
-  "name":         "egulias/email-validator",
-  "description":  "A library for validating emails",
-  "homepage":     "https://github.com/egulias/EmailValidator",
-  "type":         "Library",
-  "keywords":     ["email", "validation", "validator", "emailvalidation", "emailvalidator"],
-  "license":      "MIT",
-  "authors": [
-    {"name": "Eduardo Gulias Davis"}
-  ],
-  "extra": {
-    "branch-alias": {
-      "dev-master": "2.0.x-dev"
+    "name": "nobuhiko/email-validator",
+    "description": "egulias/email-validator 1.2.15 running clean on PHP 7.4, for EC-CUBE 3.0.x",
+    "homepage": "https://github.com/egulias/EmailValidator",
+    "type": "library",
+    "keywords": [
+        "email",
+        "validation",
+        "validator",
+        "emailvalidation",
+        "emailvalidator"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Gulias Davis"
+        }
+    ],
+    "require": {
+        "php": ">= 5.3.3",
+        "doctrine/lexer": "^1.0.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Egulias\\": "src/"
+        }
+    },
+    "replace": {
+        "egulias/email-validator": "1.2.15"
+    },
+    "support": {
+        "issues": "https://github.com/nobuhiko/email-validator/issues"
     }
-  },
-  "require":      {
-    "php": ">= 5.3.3",
-    "doctrine/lexer": "^1.0.1"
-  },
-  "require-dev" :   {
-    "phpunit/phpunit": "^4.8.24"
-  },
-  "autoload": {
-    "psr-0": {
-      "Egulias\\": "src/"
-    }
-  },
-  "scripts": {
-    "test": "phpunit"
-  }
 }
