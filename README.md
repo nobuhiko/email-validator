@@ -13,7 +13,7 @@ EC-CUBE 3.0.18 requires `egulias/email-validator` `^1.2`. 1.2.15 raises a notice
 Requires Composer 2. In the shop's project root:
 
 ```
-composer require nobuhiko/email-validator:^1.2.15
+composer require umiushi-lab/email-validator:^1.2.15
 ```
 
 The package `replace`s `egulias/email-validator` 1.2.15, so Composer removes the original and every other package keeps working against the same version.

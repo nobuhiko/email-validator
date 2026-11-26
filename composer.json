@@ -1,5 +1,5 @@
 {
-    "name": "nobuhiko/email-validator",
+    "name": "umiushi-lab/email-validator",
     "description": "egulias/email-validator 1.2.15 running clean on PHP 7.4, for EC-CUBE 3.0.x",
     "homepage": "https://github.com/egulias/EmailValidator",
     "type": "library",
@@ -29,6 +29,6 @@
         "egulias/email-validator": "1.2.15"
     },
     "support": {
-        "issues": "https://github.com/nobuhiko/email-validator/issues"
+        "issues": "https://github.com/umiushi-lab/email-validator/issues"
     }
 }
