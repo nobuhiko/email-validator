@@ -1,5 +1,7 @@
 # egulias/email-validator 1.2.15 running clean on PHP 7.4, for EC-CUBE 3.0.x
 
+[![tests](https://github.com/umiushi-lab/email-validator/actions/workflows/tests.yml/badge.svg?branch=eccube3%2F1.2)](https://github.com/umiushi-lab/email-validator/actions/workflows/tests.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/umiushi-lab/email-validator/badge)](https://scorecard.dev/viewer/?uri=github.com/umiushi-lab/email-validator)
+
 EC-CUBE 3.0.18 requires `egulias/email-validator` `^1.2`. 1.2.15 raises a notice on PHP 7.4. This fork keeps 1.2.15 and fixes it.
 
 ## Fixed
